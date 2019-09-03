@@ -5,22 +5,31 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class LoginPOM {
-	private WebDriver driver; 
+public class LoginPOM extends RegisterPOM{
 	
+
+
 	public LoginPOM(WebDriver driver) {
-		this.driver = driver; 
-		PageFactory.initElements(driver, this);
+		super(driver);
+		
 	}
+
+	@FindBy(linkText = "Log In")
+	private WebElement loginTab;
 	
-	@FindBy(id="login")
+	@FindBy(id="user_login")
 	private WebElement userName; 
 	
-	@FindBy(id="password")
+	@FindBy(id="user_pass")
 	private WebElement password;
 	
-	@FindBy(id="formLogin_submitAuth")
+	@FindBy(xpath="//*[@value = 'Sign In']")
 	private WebElement loginBtn; 
+	
+	public void loginTab()
+	{
+		this.loginTab.click();
+	}
 	
 	public void sendUserName(String userName) {
 		this.userName.clear();
