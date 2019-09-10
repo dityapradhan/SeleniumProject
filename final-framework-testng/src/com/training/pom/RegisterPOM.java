@@ -7,7 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public class RegisterPOM {
 	
-	private WebDriver driver;
+	protected WebDriver driver;
 
 	public RegisterPOM(WebDriver driver) {
 		//super();

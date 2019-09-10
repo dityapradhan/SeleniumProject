@@ -10,60 +10,52 @@ import com.training.utility.DriverNames;
 import org.testng.annotations.BeforeMethod;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 
-public class LostYourPasswordTests{
-	
+public class LostYourPasswordTests {
+
 	private WebDriver driver;
 	private LostYourPasswordPOM lostPasswordPOM;
 	private String baseUrl;
 	private Properties properties;
-	//private ScreenShot screenShot;
-	
-	
-	
-	
-	@Test //To verify whether application allows the user to recover the password 
+	// private ScreenShot screenShot;
+
+	@Test // To verify whether application allows the user to recover the password
 	public void RETC_003() throws InterruptedException {
 		System.out.println("Start executing RETC_003");
-	
-	 //Navigate to Login/Register Page registerPOM.loginRegister();
+
+		// Navigate to Login/Register Page registerPOM.loginRegister();
 		lostPasswordPOM.loginRegister();
+
+		// goto Login tab if
+		lostPasswordPOM.loginTab();
+
+		lostPasswordPOM.clickLostPassword();
+		lostPasswordPOM.enterEmail("sujana.joshi@gmail.com");
+		lostPasswordPOM.clickLostPasswordButton();
 		
-	 //goto Login tab if
-	  //lostPasswordPOM.loginTab();
-	  Thread.sleep(5000);
-	  //lostPasswordPOM.clickLostPassword();
-	  
-	  System.out.println(driver.findElement(By.xpath("//*[@class='form-row']/following-sibling::p/a")).isEnabled());
-	  
-	  WebDriverWait myWait = new WebDriverWait(driver, 60);
-	  myWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@class='form-row']/following-sibling::p/a")));
-	  lostPasswordPOM.clickLostPassword();
-	  
-	 /*Actions act = new Actions(driver);
-	  act.moveToElement(driver.findElement(By.xpath("//*[@class='form-row']/following-sibling::p/a"))).click().build().perform();*/
-	 
-	 }
+		//Assertion for successful
+		
+		//Go to email, open mail and click on link to reset password
+		//lostPasswordPOM.openMailBox("sujana.joshi@gmail.com", "joshi@1806");
+		//lostPasswordPOM.resetPassword();
+		
+		
+	}
 
 	@BeforeMethod
 	public void beforeMethod() {
 		System.out.println("before method of LostPassword");
 		driver = DriverFactory.getDriver(DriverNames.CHROME);
-		lostPasswordPOM = new LostYourPasswordPOM(driver); 
+		lostPasswordPOM = new LostYourPasswordPOM(driver);
 		baseUrl = properties.getProperty("baseURL");
-		//screenShot = new ScreenShot(driver); 
-		// open the browser 
+		// screenShot = new ScreenShot(driver);
+		// open the browser
 		driver.get(baseUrl);
 	}
 

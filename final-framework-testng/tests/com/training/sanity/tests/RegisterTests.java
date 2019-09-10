@@ -12,6 +12,7 @@ import java.io.IOException;
 import java.util.Properties;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
@@ -24,13 +25,13 @@ public class RegisterTests {
 	private RegisterPOM registerPOM;
 	private String actualResult;
 
-	@BeforeTest
+	@BeforeClass
 	public void setUpBeforeClass() throws IOException {
 		System.out.println("Before Test executed");
 		properties = new Properties();
 		FileInputStream inStream = new FileInputStream("./resources/others.properties");
 		properties.load(inStream);
-		//baseUrl = properties.getProperty("baseURL");
+
 	}
 
 	@Test
@@ -43,32 +44,36 @@ public class RegisterTests {
 		registerPOM.loginRegister();
 		actualResult = driver.getTitle();
 		Assert.assertEquals(actualResult, "My Profile – Real Estate");
-		/*if (actualResult.equals("My Profile – Real Estate"))
-			System.out.println("RETC_001 Step 1 : PASSED");*/
+		/*
+		 * if (actualResult.equals("My Profile – Real Estate"))
+		 * System.out.println("RETC_001 Step 1 : PASSED");
+		 */
 
 		// goto Register tab
 		registerPOM.registerTab();
 		Assert.assertEquals(driver.findElement(By.xpath("//*[@value = 'Register']")).isDisplayed(), true);
-		/*if (driver.findElement(By.xpath("//*[@value = 'Register']")).isDisplayed() == true)
-			System.out.println("RETC_001 Step 2 : PASSED");*/
+		/*
+		 * if
+		 * (driver.findElement(By.xpath("//*[@value = 'Register']")).isDisplayed
+		 * () == true) System.out.println("RETC_001 Step 2 : PASSED");
+		 */
 
-		registerPOM.enterEmail("manzoor@gmail.com");
-		registerPOM.enterFName("manzoor");
-		registerPOM.enterLName("mehadi");
+		registerPOM.enterEmail("sujana.joshi@gmail.com");
+		registerPOM.enterFName("ditya");
+		registerPOM.enterLName("pradhan");
 		registerPOM.clickRegister();
+		// driver.findElement(By.id("post-133"))
+		WebElement success = (WebElement) driver.findElements(By.xpath("//*[@class='notification success closeable']"));
+		Assert.assertNull(success);
 
 	}
-
-	
-	 
-	 
 
 	@BeforeMethod
 	public void beforeMethod() throws Exception {
 		System.out.println("BeforeMethod of register");
 		driver = DriverFactory.getDriver(DriverNames.CHROME);
 		registerPOM = new RegisterPOM(driver);
-		//baseUrl = properties.getProperty("baseURL");
+		baseUrl = properties.getProperty("baseURL");
 		System.out.println(baseUrl);
 		driver.get(baseUrl);
 	}

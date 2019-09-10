@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
@@ -15,21 +16,21 @@ import com.training.pom.LoginPOM;
 import com.training.utility.DriverFactory;
 import com.training.utility.DriverNames;
 
-public class LoginTests extends RegisterTests{
+public class LoginTests{
 
 	private WebDriver driver;
 	private String baseUrl;
 	private LoginPOM loginPOM;
-	//private static Properties properties;
+	private static Properties properties;
 	//private ScreenShot screenShot;
 
-	/*@BeforeClass
-	public static void setUpBeforeClass() throws IOException {
+	@BeforeClass
+	public void setUpBeforeClass() throws IOException {
 		System.out.println("Before class executed");
 		properties = new Properties();
 		FileInputStream inStream = new FileInputStream("./resources/others.properties");
 		properties.load(inStream);
-	}*/
+	}
 
 	@BeforeMethod
 	public void setUp() throws Exception {
@@ -53,9 +54,11 @@ public class LoginTests extends RegisterTests{
 		System.out.println("Start executing RETC_002");
 		loginPOM.loginRegister();
 		loginPOM.loginTab();
-		loginPOM.sendUserName("admin");
-		loginPOM.sendPassword("admin@123");
+		loginPOM.sendUserName("ditya.pradhan@in.ibm.com	");
+		loginPOM.sendPassword("ibm@12345");
 		loginPOM.clickLoginBtn(); 
-		//screenShot.captureScreenShot("First");
+		
+		//Assertion - profile page should be displayed
+		Assert.assertEquals(driver.getTitle(), "Dashboard ‹ Real Estate — WordPress");
 	}
 }

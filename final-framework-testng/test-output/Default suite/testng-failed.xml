@@ -3,14 +3,14 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.training.sanity.tests.LostYourPasswordTests">
+      <class name="com.training.sanity.tests.AddPropertyTests">
         <methods>
-          <include name="beforeClass"/>
-          <include name="beforeMethod"/>
-          <include name="RETC_003"/>
+          <include name="addProperty"/>
+          <include name="setUpBeforeClass"/>
+          <include name="setUp"/>
           <include name="afterMethod"/>
         </methods>
-      </class> <!-- com.training.sanity.tests.LostYourPasswordTests -->
+      </class> <!-- com.training.sanity.tests.AddPropertyTests -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
