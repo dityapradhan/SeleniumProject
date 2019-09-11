@@ -35,14 +35,14 @@ public class AddNewPropertyTests {
 
 	@Test
 	public void addNewProperty() {
-		// login using admin user
+		// login using admin user : Precondition
 		addNewPropertyPOM.loginRegister();
 		addNewPropertyPOM.loginTab();
 		addNewPropertyPOM.sendUserName("admin");
 		addNewPropertyPOM.sendPassword("adminuser@12345");
 		addNewPropertyPOM.clickLoginBtn();
 
-		// Go to properties tab
+		// Go to properties tab and add new property
 		addNewPropertyPOM.addNewPropertyPage();
 		addNewPropertyPOM.addNewPropertyTitle("new launch");
 		addNewPropertyPOM.addNewPropertyPrice("50000.00", "200.00");

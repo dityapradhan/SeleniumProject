@@ -1,5 +1,8 @@
 package com.training.pom;
 
+import java.util.List;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -21,7 +24,13 @@ public class LoanCalculationPOM extends LoginPOM {
 	private WebElement viewSite;
 
 	@FindBy(id = "menu-item-354")
-	private WebElement newLaunches;
+	private WebElement newLaunch;
+
+	@FindBy(xpath = "//*[@title='Nullam hendrerit Apartments']")
+	private WebElement apartmentIcon;
+
+	@FindBy(xpath = "//*[@class='property-slider default  slick-initialized slick-slider']/button[2]")
+	private WebElement nextButton;
 
 	@FindBy(xpath = "//*[@name = 'your-name']")
 	private WebElement enquiryName;
@@ -49,7 +58,7 @@ public class LoanCalculationPOM extends LoginPOM {
 
 	@FindBy(id = "interest")
 	private WebElement mortgageInterestRate;
-	
+
 	@FindBy(xpath = "//*[@class='button calc-button']")
 	private WebElement calculateMortgageBtn;
 
@@ -58,11 +67,19 @@ public class LoanCalculationPOM extends LoginPOM {
 		this.viewSite.click();
 	}
 
-	public void viewNewLaunches() {
-		// Actions act = new Actions(driver);
-		act.moveToElement(newLaunches).build().perform();
-		// Steps: 2. Click on Nullam hendrerit apartment icon and 3. click on >
-		// arrow
+	public void viewNewLaunch() throws InterruptedException {
+		act.moveToElement(newLaunch).build().perform();
+		// Steps: 2. Click on Nullam hendrerit apartment icon and 3. click on
+		// >arrow
+		this.apartmentIcon.click();
+		Thread.sleep(3000);
+		List<WebElement> slide = (List<WebElement>) driver
+				.findElements(By.xpath("//*[@class='item slick-slide slick-active']"));
+		int size = slide.size();
+		for (int i = 0; i < size; i++) {
+			this.nextButton.click();
+			Thread.sleep(3000);
+		}
 	}
 
 	public void sendEnquiry(String name, String email, String subject, String msg) {

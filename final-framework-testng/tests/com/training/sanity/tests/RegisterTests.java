@@ -58,13 +58,13 @@ public class RegisterTests {
 		 * () == true) System.out.println("RETC_001 Step 2 : PASSED");
 		 */
 
-		registerPOM.enterEmail("sujana.joshi@gmail.com");
+		registerPOM.enterEmail("ditya.pradhan@in.ibm.com");
 		registerPOM.enterFName("ditya");
 		registerPOM.enterLName("pradhan");
 		registerPOM.clickRegister();
 		// driver.findElement(By.id("post-133"))
-		WebElement success = (WebElement) driver.findElements(By.xpath("//*[@class='notification success closeable']"));
-		Assert.assertNull(success);
+		WebElement success = (WebElement) driver.findElement(By.xpath("//*[@class='notification success closeable']"));
+		Assert.assertNotNull(success);
 
 	}
 
@@ -81,7 +81,6 @@ public class RegisterTests {
 	@AfterMethod
 	public void afterMethod() throws InterruptedException {
 		System.out.println("AfterMethod of register");
-		Thread.sleep(2000);
 		driver.close();
 	}
 

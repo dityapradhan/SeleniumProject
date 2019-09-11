@@ -25,7 +25,8 @@ public class LostYourPasswordTests {
 	private Properties properties;
 	// private ScreenShot screenShot;
 
-	@Test // To verify whether application allows the user to recover the password
+	@Test // To verify whether application allows the user to recover the
+			// password
 	public void RETC_003() throws InterruptedException {
 		System.out.println("Start executing RETC_003");
 
@@ -34,18 +35,12 @@ public class LostYourPasswordTests {
 
 		// goto Login tab if
 		lostPasswordPOM.loginTab();
-
 		lostPasswordPOM.clickLostPassword();
-		lostPasswordPOM.enterEmail("sujana.joshi@gmail.com");
+		lostPasswordPOM.enterEmail("ditya.pradhan@in.ibm.com");
 		lostPasswordPOM.clickLostPasswordButton();
-		
-		//Assertion for successful
-		
-		//Go to email, open mail and click on link to reset password
-		//lostPasswordPOM.openMailBox("sujana.joshi@gmail.com", "joshi@1806");
-		//lostPasswordPOM.resetPassword();
-		
-		
+
+		// Assertion for successful
+
 	}
 
 	@BeforeMethod
@@ -54,15 +49,13 @@ public class LostYourPasswordTests {
 		driver = DriverFactory.getDriver(DriverNames.CHROME);
 		lostPasswordPOM = new LostYourPasswordPOM(driver);
 		baseUrl = properties.getProperty("baseURL");
-		// screenShot = new ScreenShot(driver);
 		// open the browser
 		driver.get(baseUrl);
 	}
 
 	@AfterMethod
 	public void afterMethod() throws InterruptedException {
-		Thread.sleep(2000);
-		//driver.close();
+		driver.close();
 	}
 
 	@BeforeClass

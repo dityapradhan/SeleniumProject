@@ -46,7 +46,7 @@ public class LoginTests{
 	@AfterMethod
 	public void tearDown() throws Exception {
 		System.out.println("after method of Login");
-		Thread.sleep(1000);
+		Thread.sleep(3000);
 		driver.quit();
 	}
 	@Test
@@ -55,10 +55,14 @@ public class LoginTests{
 		loginPOM.loginRegister();
 		loginPOM.loginTab();
 		loginPOM.sendUserName("ditya.pradhan@in.ibm.com	");
-		loginPOM.sendPassword("ibm@12345");
+		loginPOM.sendPassword("ibm@123456");
 		loginPOM.clickLoginBtn(); 
 		
 		//Assertion - profile page should be displayed
-		Assert.assertEquals(driver.getTitle(), "Dashboard ‹ Real Estate — WordPress");
+		Assert.assertEquals(driver.getTitle(), "My Profile – Real Estate");
+		
+		//Steps to change password
+		loginPOM.changePassword("ibm@123456", "ibm@12345", "ibm@12345");
+		
 	}
 }

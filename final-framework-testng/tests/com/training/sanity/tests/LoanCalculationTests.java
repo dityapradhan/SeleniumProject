@@ -28,8 +28,8 @@ public class LoanCalculationTests {
 	private String baseUrl;
 
 	@Test
-	public void loanCalculation() {
-		//login as admin
+	public void loanCalculation() throws InterruptedException {
+		//login as admin : Precondition
 		loanCalculationPOM.loginRegister();
 		loanCalculationPOM.loginTab();
 		loanCalculationPOM.sendUserName("admin");
@@ -38,12 +38,14 @@ public class LoanCalculationTests {
 		
 		//view, enquire & calculate loan on New launches
 		loanCalculationPOM.home();
-		loanCalculationPOM.viewNewLaunches();
+		loanCalculationPOM.viewNewLaunch();
 		loanCalculationPOM.sendEnquiry("selenium", "selenium@gmail.com", "apartment", "looking for apartment");
 		loanCalculationPOM.mortgageCalculator("40000", "2000", "2", "5");
 		
-		//System.out.println(driver.findElements(By.xpath("//*[@class='calc-output']")));
-		Assert.assertEquals(driver.findElements(By.xpath("//*[@class='notification success']/strong")), arg1);
+		
+		//Assertion
+		Thread.sleep(3000);
+		Assert.assertEquals(driver.findElement(By.xpath("//*[@class='calc-output']")).getText(), "1667.11 Rs.");
 		
 	}
 
@@ -58,8 +60,7 @@ public class LoanCalculationTests {
 
 	@AfterMethod
 	public void afterMethod() throws InterruptedException {
-		Thread.sleep(3000);
-		//driver.quit();
+		driver.quit();
 	}
 
 	@BeforeClass

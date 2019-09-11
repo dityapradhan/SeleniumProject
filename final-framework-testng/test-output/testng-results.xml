@@ -2,28 +2,28 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="96929" started-at="2019-09-10T08:18:44Z" finished-at="2019-09-10T08:20:21Z">
+  <suite name="Default suite" duration-ms="26083" started-at="2019-09-11T08:39:31Z" finished-at="2019-09-11T08:39:57Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="96929" started-at="2019-09-10T08:18:44Z" finished-at="2019-09-10T08:20:21Z">
-      <class name="com.training.sanity.tests.LoanCalculationTests">
-        <test-method status="PASS" signature="beforeClass()[pri:0, instance:com.training.sanity.tests.LoanCalculationTests@1593948d]" name="beforeClass" is-config="true" duration-ms="15" started-at="2019-09-10T13:48:44Z" finished-at="2019-09-10T13:48:44Z">
+    <test name="Default test" duration-ms="26083" started-at="2019-09-11T08:39:31Z" finished-at="2019-09-11T08:39:57Z">
+      <class name="com.training.sanity.tests.LoginTests">
+        <test-method status="PASS" signature="setUpBeforeClass()[pri:0, instance:com.training.sanity.tests.LoginTests@1593948d]" name="setUpBeforeClass" is-config="true" duration-ms="10" started-at="2019-09-11T14:09:31Z" finished-at="2019-09-11T14:09:31Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- beforeClass -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.training.sanity.tests.LoanCalculationTests@1593948d]" name="beforeMethod" is-config="true" duration-ms="41025" started-at="2019-09-10T13:48:44Z" finished-at="2019-09-10T13:49:25Z">
+        </test-method> <!-- setUpBeforeClass -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.training.sanity.tests.LoginTests@1593948d]" name="setUp" is-config="true" duration-ms="11917" started-at="2019-09-11T14:09:31Z" finished-at="2019-09-11T14:09:43Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="loanCalculation()[pri:0, instance:com.training.sanity.tests.LoanCalculationTests@1593948d]" name="loanCalculation" duration-ms="52885" started-at="2019-09-10T13:49:25Z" finished-at="2019-09-10T13:50:18Z">
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="RETC_002()[pri:0, instance:com.training.sanity.tests.LoginTests@1593948d]" name="RETC_002" duration-ms="11136" started-at="2019-09-11T14:09:43Z" finished-at="2019-09-11T14:09:54Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- loanCalculation -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.training.sanity.tests.LoanCalculationTests@1593948d]" name="afterMethod" is-config="true" duration-ms="3003" started-at="2019-09-10T13:50:18Z" finished-at="2019-09-10T13:50:21Z">
+        </test-method> <!-- RETC_002 -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.training.sanity.tests.LoginTests@1593948d]" name="tearDown" is-config="true" duration-ms="3000" started-at="2019-09-11T14:09:54Z" finished-at="2019-09-11T14:09:57Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- afterMethod -->
-      </class> <!-- com.training.sanity.tests.LoanCalculationTests -->
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.training.sanity.tests.LoginTests -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

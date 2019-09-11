@@ -40,7 +40,7 @@ public class LostYourPasswordPOM extends LoginPOM {
 
 	}
 
-	public void openMailBox(String email, String password) throws InterruptedException {
+	/*public void openMailBox(String email, String password) throws InterruptedException {
 
 		driver.get("http://www.gmail.com");
 		driver.findElement(By.id("identifierId")).sendKeys(email);
@@ -52,9 +52,9 @@ public class LostYourPasswordPOM extends LoginPOM {
 		driver.findElement(By.xpath("//*[@class = 'gb_jf']")).sendKeys("realestate");
 		act.sendKeys(Keys.ENTER).build().perform();
 	}
+*/
+	/*public void resetPassword() {
 
-	public void resetPassword() {
-
-	}
+	}*/
 
 }
