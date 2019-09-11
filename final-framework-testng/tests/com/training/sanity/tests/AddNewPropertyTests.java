@@ -10,10 +10,12 @@ import org.testng.annotations.BeforeMethod;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.List;
 import java.util.Properties;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
@@ -34,7 +36,7 @@ public class AddNewPropertyTests {
 	}
 
 	@Test
-	public void addNewProperty() {
+	public void addNewProperty() throws InterruptedException {
 		// login using admin user : Precondition
 		addNewPropertyPOM.loginRegister();
 		addNewPropertyPOM.loginTab();
@@ -44,7 +46,7 @@ public class AddNewPropertyTests {
 
 		// Go to properties tab and add new property
 		addNewPropertyPOM.addNewPropertyPage();
-		addNewPropertyPOM.addNewPropertyTitle("new launch");
+		addNewPropertyPOM.addNewPropertyTitle("new launch1", "new launch1");
 		addNewPropertyPOM.addNewPropertyPrice("50000.00", "200.00");
 		addNewPropertyPOM.addNewPropertyMainDetails("New", "Electronic city", "immediate");
 		addNewPropertyPOM.addNewPorpertyLocation("yeshwanthapur", "yeshwanthapur", "120", "56");
@@ -55,7 +57,19 @@ public class AddNewPropertyTests {
 		//Assertion
 		Assert.assertEquals(driver.findElement(By.id("message")).getAttribute("class"),
 				"updated notice notice-success is-dismissible");
-
+		
+		//View all properties
+		addNewPropertyPOM.viewAllProperties();
+		Thread.sleep(3000);
+		List<WebElement> propertyList = driver.findElements(By.xpath("//*[@class='row-title']"));
+		for(WebElement ele:propertyList)
+		{
+			if(ele.getText().equals("new launch1"))
+				System.out.println("Newly added property is visible in the list");
+		}
+		
+		
+		
 	}
 
 	@BeforeMethod

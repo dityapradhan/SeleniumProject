@@ -22,6 +22,9 @@ public class AddNewPropertyPOM extends LoginPOM{
 	@FindBy(xpath = "//*[@name = 'post_title']")
 	private WebElement title;
 	
+	@FindBy(id ="content")
+	private WebElement content;
+	
 	@FindBy(id = "ui-id-1")
 	private WebElement priceTab;
 	
@@ -70,6 +73,9 @@ public class AddNewPropertyPOM extends LoginPOM{
 	@FindBy (id = "publish")
 	private WebElement publish;
 	
+	@FindBy(linkText="All Properties")
+	private WebElement allProperties;
+	
 	public void addNewPropertyPage()
 	{
 		Actions act = new Actions(driver);
@@ -78,9 +84,10 @@ public class AddNewPropertyPOM extends LoginPOM{
 		//this.propertiesTab.click();
 	}
 	
-	public void addNewPropertyTitle(String titleName)
+	public void addNewPropertyTitle(String titleName, String content)
 	{
 		this.title.sendKeys(titleName);
+		this.content.sendKeys(content);
 	}
 	
 	public void addNewPropertyPrice(String price, String pricePer)
@@ -129,5 +136,9 @@ public class AddNewPropertyPOM extends LoginPOM{
 		js.executeScript("arguments[0].click()", publish);
 		//this.publish.click();
 	}
-
+	
+	public void viewAllProperties()
+	{
+		this.allProperties.click();
+	}
 }
