@@ -3,14 +3,14 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.training.sanity.tests.AddNewPropertyTests">
+      <class name="com.training.regression.tests.RegisterDBTest">
         <methods>
-          <include name="setUpBeforeClass"/>
-          <include name="addNewProperty"/>
-          <include name="setUp"/>
+          <include name="registerDBTest"/>
           <include name="afterMethod"/>
+          <include name="beforeClass"/>
+          <include name="beforeMethod"/>
         </methods>
-      </class> <!-- com.training.sanity.tests.AddNewPropertyTests -->
+      </class> <!-- com.training.regression.tests.RegisterDBTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

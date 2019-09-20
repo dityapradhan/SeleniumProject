@@ -1,29 +1,104 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="34814" started-at="2019-09-11T09:40:08Z" finished-at="2019-09-11T09:40:43Z">
+  <suite name="Default suite" duration-ms="53739" started-at="2019-09-19T08:40:03Z" finished-at="2019-09-19T08:40:56Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="34814" started-at="2019-09-11T09:40:08Z" finished-at="2019-09-11T09:40:43Z">
-      <class name="com.training.sanity.tests.AddNewPropertyTests">
-        <test-method status="PASS" signature="setUpBeforeClass()[pri:0, instance:com.training.sanity.tests.AddNewPropertyTests@1593948d]" name="setUpBeforeClass" is-config="true" duration-ms="10" started-at="2019-09-11T15:10:08Z" finished-at="2019-09-11T15:10:08Z">
+    <test name="Default test" duration-ms="53739" started-at="2019-09-19T08:40:03Z" finished-at="2019-09-19T08:40:56Z">
+      <class name="com.training.regression.tests.RegisterDBTest">
+        <test-method status="PASS" signature="beforeClass()[pri:0, instance:com.training.regression.tests.RegisterDBTest@1b604f19]" name="beforeClass" is-config="true" duration-ms="6" started-at="2019-09-19T14:10:03Z" finished-at="2019-09-19T14:10:03Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setUpBeforeClass -->
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.training.sanity.tests.AddNewPropertyTests@1593948d]" name="setUp" is-config="true" duration-ms="11544" started-at="2019-09-11T15:10:08Z" finished-at="2019-09-11T15:10:19Z">
+        </test-method> <!-- beforeClass -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.training.regression.tests.RegisterDBTest@1b604f19]" name="beforeMethod" is-config="true" duration-ms="8909" started-at="2019-09-19T14:10:03Z" finished-at="2019-09-19T14:10:12Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="addNewProperty()[pri:0, instance:com.training.sanity.tests.AddNewPropertyTests@1593948d]" name="addNewProperty" duration-ms="22572" started-at="2019-09-11T15:10:19Z" finished-at="2019-09-11T15:10:42Z">
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="registerDBTest(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.training.regression.tests.RegisterDBTest@1b604f19]" name="registerDBTest" duration-ms="3194" started-at="2019-09-19T14:10:12Z" data-provider="db-input" finished-at="2019-09-19T14:10:15Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[manzoor]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[manzoor mehadi]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[manzoor mehadi]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- addNewProperty -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.training.sanity.tests.AddNewPropertyTests@1593948d]" name="afterMethod" is-config="true" duration-ms="675" started-at="2019-09-11T15:10:42Z" finished-at="2019-09-11T15:10:43Z">
+        </test-method> <!-- registerDBTest -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.training.regression.tests.RegisterDBTest@1b604f19]" name="afterMethod" is-config="true" duration-ms="5652" started-at="2019-09-19T14:10:15Z" finished-at="2019-09-19T14:10:21Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-      </class> <!-- com.training.sanity.tests.AddNewPropertyTests -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.training.regression.tests.RegisterDBTest@1b604f19]" name="beforeMethod" is-config="true" duration-ms="8561" started-at="2019-09-19T14:10:21Z" finished-at="2019-09-19T14:10:29Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="registerDBTest(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.training.regression.tests.RegisterDBTest@1b604f19]" name="registerDBTest" duration-ms="3041" started-at="2019-09-19T14:10:29Z" data-provider="db-input" finished-at="2019-09-19T14:10:32Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[alex@gmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[76576]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[alex hales]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- registerDBTest -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.training.regression.tests.RegisterDBTest@1b604f19]" name="afterMethod" is-config="true" duration-ms="5646" started-at="2019-09-19T14:10:32Z" finished-at="2019-09-19T14:10:38Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.training.regression.tests.RegisterDBTest@1b604f19]" name="beforeMethod" is-config="true" duration-ms="8624" started-at="2019-09-19T14:10:38Z" finished-at="2019-09-19T14:10:46Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="registerDBTest(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.training.regression.tests.RegisterDBTest@1b604f19]" name="registerDBTest" duration-ms="4235" started-at="2019-09-19T14:10:46Z" data-provider="db-input" finished-at="2019-09-19T14:10:51Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[mariya@gmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[mariya]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[876876]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- registerDBTest -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.training.regression.tests.RegisterDBTest@1b604f19]" name="afterMethod" is-config="true" duration-ms="5642" started-at="2019-09-19T14:10:51Z" finished-at="2019-09-19T14:10:56Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+      </class> <!-- com.training.regression.tests.RegisterDBTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
